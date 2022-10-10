@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CollisionContext">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\InteractionSystem\Contexts\CollisionContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionEndContext">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\InteractionSystem\Contexts\CollisionEndContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionStartContext">
+    <Position X="13.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\InteractionSystem\Contexts\CollisionStartContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InteractableCollisionManager">
+    <Position X="13.25" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\InteractionSystem\Interactable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interactable">
+    <Position X="8.5" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAAAAAgxAQAAAAAAAAAAAAgAAEAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\InteractionSystem\Interactable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InteractionContext">
+    <Position X="11.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\InteractionSystem\InteractionContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InteractionListener">
+    <Position X="13.25" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\InteractionSystem\InteractionListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonoDodge">
+    <Position X="6" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIQEAAAAACAAAAgAAAAABAAACAAEAAEAAgAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\MonoDodge\Scripts\MonoDodge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonoDodgeComponent">
+    <Position X="3" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ACREAAAIADAIAAAAAAEAEAACDACAAAEEAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\MonoDodge\Scripts\MonoDodgeComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="InteractionType">
+    <Position X="9" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAMAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\InteractionSystem\Interactable.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
