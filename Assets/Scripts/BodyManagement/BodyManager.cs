@@ -10,6 +10,7 @@ public class BodyManager : MonoDodge
     public List<GameObject> batch = new List<GameObject>();
     public GameObject playerVisual;   
     public GameObject spawn;
+
     private int currentIndex = 0;
 
     // Update is called once per frame

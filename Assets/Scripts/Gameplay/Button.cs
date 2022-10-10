@@ -7,11 +7,11 @@ using UnityEngine;
 /// </summary>
 public class Button : MonoDodge
 {
-    private Interactable button;
-
     //Quick and easy solution, the animator!
     public Animator theAnimator;
     public string toggleParam = "UpDown";
+
+    private Interactable button;
 
     //Setup for the interactions between the interactables and the button itself
     public override void Start()

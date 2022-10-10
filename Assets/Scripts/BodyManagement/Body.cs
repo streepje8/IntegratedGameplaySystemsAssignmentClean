@@ -7,15 +7,16 @@ using static UnityEngine.ParticleSystem;
 //These are the bodies, they play effects and fall eventually!
 public class Body : MonoDodge 
 {
+    public LayerMask enviroment;
+    public float groundCheckDistance = 0.02f;
+    public ParticleSystem particles;
+    public Animator fade; 
+
     private float gravityTime = 25f;
     private float currentTime = 0f;
     private float gravity = 0f;
     private bool isGrounded = false;
     private bool isActive = false;
-    public LayerMask enviroment;
-    public float groundCheckDistance = 0.02f;
-    public ParticleSystem particles;
-    public Animator fade; 
 
     // When spawning reset all values and check wether it needs to start falling eventually or not
     public void Spawn(Transform target) 
