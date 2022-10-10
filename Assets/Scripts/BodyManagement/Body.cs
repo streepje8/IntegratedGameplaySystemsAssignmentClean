@@ -4,46 +4,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
+//These are the bodies, they play effects and fall eventually!
 public class Body : MonoDodge 
 {
-    private float _gravityTime = 25f;
-    private float _currentTime = 0f;
-    private float _gravity = 0f;
-    private bool _isGrounded = false;
-    private bool _isActive = false;
+    private float gravityTime = 25f;
+    private float currentTime = 0f;
+    private float gravity = 0f;
+    private bool isGrounded = false;
+    private bool isActive = false;
     public LayerMask enviroment;
     public float groundCheckDistance = 0.02f;
     public ParticleSystem particles;
     public Animator fade; 
 
+    // When spawning reset all values and check wether it needs to start falling eventually or not
     public void Spawn(Transform target) 
     {
-        _gravity = 0f;
+        gravity = 0f;
         transform.position = target.position;
         transform.rotation = target.rotation;
         particles.Play();
         fade.Play(0);
-        _currentTime = 0f;
+        currentTime = 0f;
 
-        //Check if already on ground wooww, problematic when spawning it on a floating statue hmmm...
-        //oh well, prototype go brr :D
-        _isGrounded = Physics.Raycast(transform.position, -Vector3.up, 0.5f, enviroment);
-        _isActive = true;
+        //Problematic when spawning on top of another statue as that will eventually fall and this won't
+        //It's a small detail but this is better on performance like this,
+        //Maybe a re-check event could work? But it's fine for a prototype! :D
+        isGrounded = Physics.Raycast(transform.position, -Vector3.up, 0.5f, enviroment);
+        isActive = true;
     }
 
+    // Check whether has started and not on the ground in order to check the floating time
     public override void Update() 
     {
-        if (!_isGrounded && _isActive) 
+        if (!isGrounded && isActive) 
         {
-            _isGrounded = Physics.SphereCast(new Ray(transform.position, Vector3.down), 0.2f, groundCheckDistance, enviroment);
-            _currentTime += 1 * Time.deltaTime;
+            isGrounded = Physics.SphereCast(new Ray(transform.position, Vector3.down), 0.2f, groundCheckDistance, enviroment);
+            currentTime += 1 * Time.deltaTime;
 
-            _isActive = !_isGrounded;
+            isActive = !isGrounded;
 
-            if (_currentTime >= _gravityTime) 
+            if (currentTime >= gravityTime) 
             {
-                transform.position += new Vector3(0, _gravity, 0);
-                _gravity -= 0.01f * Time.deltaTime;
+                transform.position += new Vector3(0, gravity, 0);
+                gravity -= 0.01f * Time.deltaTime;
             }
         }
     }

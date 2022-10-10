@@ -2,34 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is used to manage the platform at the end
+/// </summary>
 public class Button : MonoDodge
 {
-    private Interactable buttonmaybe;
+    private Interactable button;
 
-    public Animator Animatorthing;
+    //Quick and easy solution, the animator!
+    public Animator theAnimator;
+    public string toggleParam = "UpDown";
 
-    // Start is called before the first frame update
+    //Setup for the interactions between the interactables and the button itself
     public override void Start()
     {
-        buttonmaybe = GetDodge<Interactable>();
+        button = GetDodge<Interactable>();
         InteractionListener IL = new InteractionListener();
         InteractionListener IL2 = new InteractionListener();
         IL.SetOnInteraction<CollisionStartContext>(Activate);
         IL2.SetOnInteraction<CollisionEndContext>(Deactivate);
-        buttonmaybe.RegisterListener(InteractionType.CollisionStart, IL);
-        buttonmaybe.RegisterListener(InteractionType.CollisionEnd, IL2);
+        button.RegisterListener(InteractionType.CollisionStart, IL);
+        button.RegisterListener(InteractionType.CollisionEnd, IL2);
     }
 
-    public void Activate(CollisionStartContext cont) {
-        Animatorthing.SetBool("UpDown", true);
-        Debug.Log("wee");
+    //Manages the up an down of the platform
+    public void Activate(CollisionStartContext cont) 
+    {
+        theAnimator.SetBool(toggleParam, true);
     }
 
-    public void Deactivate(CollisionEndContext cont) {
-        Animatorthing.SetBool("UpDown", false);
-        Debug.Log("woo");
+    public void Deactivate(CollisionEndContext cont) 
+    {
+        theAnimator.SetBool(toggleParam, false);
     }
-
-
-
 }
